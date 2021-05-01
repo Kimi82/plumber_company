@@ -1,27 +1,45 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 import './Navbar.css'
+import About from '../About/About.js'
 function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false)
-    
-//navbarLinks.classList.toggle('active')}
-  const navbarLinks = ""
+
+
   return (
-    <nav className="navbar">
-      <div className="navbar__logo">xdd</div>
-      <a className="navbar__hamburger" onClick={() => {setMenuOpen(!menuOpen)}}>
-        <span className="bar"> </span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </a>
-      <div className="navbar__links" style={{display: menuOpen ? 'block' : 'none'}}>
-        <ul>
-          <li><a>Home</a></li>
-          <li><a>About</a></li>
-          <li><a>noNiewme</a></li>
-        </ul>
-      </div>
-    </nav>
+<main class="main__wrapper">
+  <div className="main__logoBox">HERE WILL BE THE LOGO!</div>
+  <span className="main__highHalf">
+  <section className="main__section0">
+    <div className="main__boxCloseCross">&times;</div>
+    <div className="main__boxContent">
+      <About/>
+    </div>
+  </section>
+
+  <section className="main__section1">
+  <div className="main__boxCloseCross">&times;</div>
+  <div className="main__boxContent">
+      USŁUGI
+  </div>
+  </section>
+  </span>
+
+  <span className="main__downHalf">
+    
+  <section className="main__section2">
+  <div className="main__boxCloseCross">&times;</div>
+  <div className="main__boxContent">
+      Here will be the content
+  </div>
+  </section>
+
+  <section className="main__section3">
+  <div className="main__boxCloseCross">&times;</div>
+    <div className="main__boxContent">
+      Here will be the content
+    </div>  
+  </section>
+  </span>
+</main>
   );
 }
 
