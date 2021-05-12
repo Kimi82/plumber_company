@@ -5,7 +5,7 @@ function About() {
 
   return (
       <div className="about__wrapper">
-      <h1>ABOUT</h1>
+        <h1>test</h1>
      </div>
   );
 }
