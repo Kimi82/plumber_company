@@ -1,7 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font: 'Roboto Slab', sans-serif;
+}
+
 .about__wrapper {
+  position: relative;
+  top: 10vh;
+  width: 100vw;
+  height: 90vh;
+  background-color: #F06060;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about__wrapper img {
+  height: 94%;
+  margin: 3% 12% 0;
+}
+
+.about__title {
+  color: whitesmoke;
   width: 100%;
   height: 100%;
-  background-color: pink;
-  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
 }
 /*# sourceMappingURL=About.css.map */

@@ -1,1 +1,11 @@
-/* No CSS *//*# sourceMappingURL=Contact.css.map */
+.contact__wrapper {
+  position: relative;
+  top: 10vh;
+  width: 100vw;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FA987D;
+}
+/*# sourceMappingURL=Contact.css.map */
