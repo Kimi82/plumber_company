@@ -7,10 +7,10 @@
 }
 
 .about__wrapper {
+  scroll-snap-align: center;
   position: relative;
-  top: 10vh;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   background-color: #F06060;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,7 +18,7 @@
 }
 
 .about__wrapper img {
-  height: 94%;
+  height: 92%;
   margin: 3% 12% 0;
 }
 

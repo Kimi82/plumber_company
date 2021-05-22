@@ -19,7 +19,7 @@ const randomTitlePhoto = () => {
 
 
   return (
-    <div className="about__wrapper"> 
+    <div className="about__wrapper" id="about"> 
       <img src={randomTitlePhoto()}/>
       <div className="about__title"><h1>JESTEŚMY FACHOWCAMI,<br/> MOŻEMY BYĆ NIMI<br/> I DLA CIEBIE</h1></div>
     </div>

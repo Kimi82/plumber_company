@@ -1,8 +1,9 @@
 .contact__wrapper{
+    scroll-snap-align:center;
     position: relative;
-    top: 10vh;
+    //top: 10vh;
     width: 100vw;
-    height: 90vh; 
+    height: 100vh; 
     display: flex;
     background-color: #FA987D;
 }

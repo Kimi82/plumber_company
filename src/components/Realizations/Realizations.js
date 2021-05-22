@@ -4,7 +4,7 @@ function Realizations() {
 
 
   return (
-      <div className="realizations__wrapper">
+      <div className="realizations__wrapper" id="realizations">
         <h1>Realizacje</h1>
      </div>
   );

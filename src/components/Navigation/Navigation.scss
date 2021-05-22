@@ -7,14 +7,16 @@
     position: fixed;
     width: 100vw;
     height: 10vh;
-    background-color: rgb(235, 230, 230);
+    //background-color: rgb(235, 230, 230);
     display: flex;
     justify-content: space-between;
-    z-index: 1; 
+    z-index: 1;
+
 }
 .navigation__logo{
     width: 100%;
-    
+    text-decoration: none;
+    color: black;
     padding: 0 1vw 0;
     width: 25vw;
     display: flex;
@@ -34,10 +36,16 @@
     li{
         padding:25px;
         list-style-type: none;
-        &:hover{
-            color: rgb(34, 34, 158);
-            transition: color .5s;
-        }
+        
+    }
+
+    a {
+        text-decoration: none;
+        color: black
+    }
+    :hover{
+        color: rgb(34, 34, 158);
+        transition: color .5s;
     }
 
 }

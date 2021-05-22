@@ -9,7 +9,6 @@
   position: fixed;
   width: 100vw;
   height: 10vh;
-  background-color: #ebe6e6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,6 +20,8 @@
 
 .navigation__logo {
   width: 100%;
+  text-decoration: none;
+  color: black;
   padding: 0 1vw 0;
   width: 25vw;
   display: -webkit-box;
@@ -55,7 +56,12 @@
   list-style-type: none;
 }
 
-.navigation__list li:hover {
+.navigation__list a {
+  text-decoration: none;
+  color: black;
+}
+
+.navigation__list :hover {
   color: #22229e;
   -webkit-transition: color .5s;
   transition: color .5s;
