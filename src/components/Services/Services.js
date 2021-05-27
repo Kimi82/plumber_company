@@ -4,9 +4,9 @@ function Services() {
 
 
   return (
-      <div className="services__wrapper" id="services">
+      <section className="services__wrapper panel" id="services">
         <h1>Usługi</h1>
-     </div>
+     </section>
   );
 }
 

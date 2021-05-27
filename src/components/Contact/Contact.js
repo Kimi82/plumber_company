@@ -4,9 +4,9 @@ function Contact() {
 
 
   return (
-      <div className="contact__wrapper" id="contact">
+      <section className="contact__wrapper panel" id="contact">
         <h1>Contact</h1>
-     </div>
+     </section>
   );
 }
 

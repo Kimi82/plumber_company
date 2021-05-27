@@ -19,10 +19,10 @@ const randomTitlePhoto = () => {
 
 
   return (
-    <div className="about__wrapper" id="about"> 
+    <section className="about__wrapper panel" id="about"> 
       <img src={randomTitlePhoto()}/>
       <div className="about__title"><h1>JESTEŚMY FACHOWCAMI,<br/> MOŻEMY BYĆ NIMI<br/> I DLA CIEBIE</h1></div>
-    </div>
+    </section>
   );
 }
 

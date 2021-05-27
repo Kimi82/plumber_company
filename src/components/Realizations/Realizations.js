@@ -4,9 +4,9 @@ function Realizations() {
 
 
   return (
-      <div className="realizations__wrapper" id="realizations">
+      <section className="realizations__wrapper panel"  id="realizations">
         <h1>Realizacje</h1>
-     </div>
+     </section>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css'
@@ -9,6 +9,9 @@ import Realizations from './components/Realizations/Realizations.js'
 import Contact from './components/Contact/Contact.js'
 
 function App() {
+
+
+
 
   return (
      

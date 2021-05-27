@@ -1,25 +1,33 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './Navigation.css'
 import logo from '../static/logo.png'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 
 function Navigation() {
-    
 
   
+
+
+
+
+const [activeDot, setActiveDot] = useState("about");
+
   return (
-<div className="navigation__wrapper">
-<a href="/" className="navigation__logo">
+<section className="navigation__wrapper">
+{/* <a href="/" className="navigation__logo">
 <img src={logo}/>
-  <h2>YOURNAME</h2></a>
+  <h2>YOURNAME</h2></a> */}
 
 <ul className="navigation__list">
-<li><h1><a href="#about">O Nas</a></h1></li>
-<li><h1><a href="#services">Usługi</a></h1></li>
-<li><h1><a href="#realizations">Realizacje</a></h1></li>
-<li><h1><a href="#contact">Kontakt</a></h1></li>
+<li onClick={()=>setActiveDot("about")}><a href="#about" ><span>O Nas</span><div className="dot"/></a></li>
+<li onClick={()=>setActiveDot("services")}><a href="#services"><span>Usługi</span><div className="dot"/></a></li>
+<li onClick={()=>setActiveDot("realizations")}><a href="#realizations"><span>Realizacje</span><div className="dot-active"/></a></li>
+<li onClick={()=>setActiveDot("contact")}><a href="#contact"><span>Kontakt</span><div className="dot"/></a></li>
 </ul>
-</div> 
+</section> 
     
   );
 }
