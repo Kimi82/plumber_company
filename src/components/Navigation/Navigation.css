@@ -34,7 +34,7 @@
   background-color: #2c2fcf;
   letter-spacing: 1px;
   padding: 10px 25px;
-  margin-right: 30px;
+  margin-right: 20px;
   border-radius: 3px;
   -webkit-transform: translateX(30px);
           transform: translateX(30px);
@@ -48,7 +48,6 @@
 }
 
 .navigation__list a .dot, .navigation__list a .dot-active {
-  content: '';
   height: 15px;
   width: 15px;
   border: 2px solid white;
