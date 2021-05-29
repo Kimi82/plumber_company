@@ -10,37 +10,109 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger'
 function Navigation() {
 
 
+// const logit = () =>{
+// const sections = document.getElementsByClassName("panel");
+// //for(let i=0; i<=sections.length; i++){
+//   const messageText = isInViewport(sections[2]) ?
+//         alert("JEST") :
+//         console.log("nie");
+
+
+// //}
+// }
+
+// function isInViewport(element) {
+//   const rect = element.getBoundingClientRect();
+//   return (
+//       rect.top >= 0 &&
+//       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+//   );
+// }
+
+
+// useEffect(() => {
+//   function watchScroll() {
+//     let container = document.getElementsByClassName("main__wrapper")
+//     container[0].addEventListener("scroll", logit);
+//   }
+//   watchScroll();
+//   return () => {
+//     window.removeEventListener("scroll", logit);
+//   };
+// });
+
+gsap.registerPlugin(ScrollTrigger);
+
+function goToSection(i, anim) {
+  console.log(i)
+  gsap.to(window, {
+    scrollTo: {y: i.innerHeight, autoKill: false},
+    duration: 1
+  });
+  
+  if(anim) {
+    anim.restart();
+  }
+}
+
+gsap.utils.toArray(".panel").forEach((panel, i) => {
+  ScrollTrigger.create({
+    trigger: panel,
+    onEnter: () => goToSection(i)
+  });
+  
+  ScrollTrigger.create({
+    trigger: panel,
+    start: "bottom bottom",
+    onEnterBack: () => goToSection(i),
+  });
+});
+
+
   return (
-<section className="navigation">
-{/* <a href="/" className="navigation__logo">
+
+<nav className="navigation">
+  
+  {/* <a href="/" className="navigation__logo">
 <img src={logo}/>
   <h2>YOURNAME</h2></a> */}
 
-
 <a href="#about">
-  <div className="navigation__tooltip">
-    <div className="navigation__dot">
-      <span className="navigation__tooltipText">About</span>
-  </div></div></a>
+  <div className="navigation__tooltipWrapper">
+      <span className="navigation__tooltipText">About</span> 
+      <div className="navigation__dotWrapper"> 
+      <div className="navigation__dot"></div>
+      </div>
+  </div> 
+  </a> 
 
-<a href="#services">
-  <div className="navigation__tooltip">
-    <div className="navigation__dot">
-      <span className="navigation__tooltipText">Services</span>
-  </div></div></a>
+  <a href="#services">
+  <div className="navigation__tooltipWrapper">
+      <span className="navigation__tooltipText">Services</span> 
+      <div className="navigation__dotWrapper">
+      <div className="navigation__dot"></div>
+      </div>
+  </div> 
+  </a> 
 
-<a href="#realizations">
-  <div className="navigation__tooltip">
-    <div className="navigation__dot">
+  <a href="#realizations">
+  <div className="navigation__tooltipWrapper">
       <span className="navigation__tooltipText">Realizations</span>
-  </div></div></a>
+      <div className="navigation__dotWrapper"> 
+      <div className="navigation__dot"></div>
+      </div>
+  </div> 
+  </a> 
 
-<a href="#contact">
-  <div className="navigation__tooltip">
-    <div className="navigation__dot">
-      <span className="navigation__tooltipText">About</span>
-    </div></div></a>
-</section> 
+  <a href="#contact">
+  <div className="navigation__tooltipWrapper">
+      <span className="navigation__tooltipText">Contact</span>
+      <div className="navigation__dotWrapper"> 
+      <div className="navigation__dot"></div>
+      </div>
+  </div> 
+  </a> 
+</nav> 
     
   );
 }
