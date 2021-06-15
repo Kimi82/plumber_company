@@ -4,7 +4,7 @@ function Realizations() {
 
 
   return (
-      <section className="realizations__wrapper panel"  id="realizations">
+      <section className="realizations__wrapper slide"  id="realizations">
         <h1>Realizacje</h1>
      </section>
   );

@@ -3,7 +3,8 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
+  color: white;
 }
 
 body {

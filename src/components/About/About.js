@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './About.css'
 
 
@@ -19,9 +19,15 @@ const randomTitlePhoto = () => {
 
 
   return (
-    <section className="about__wrapper panel" id="about"> 
+    <section className="about__wrapper slide" id="about"> 
       <img src={randomTitlePhoto()}/>
       <div className="about__title"><h1>JESTEŚMY FACHOWCAMI,<br/> MOŻEMY BYĆ NIMI<br/> I DLA CIEBIE</h1></div>
+
+      <div className="about__buttonWrapper">
+        <span className="about_progressBar"><div className="about__progressBar--value"></div></span>
+        <div className="about__button">ABOUT US</div>
+      </div>
+
     </section>
   );
 }

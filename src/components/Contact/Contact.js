@@ -4,7 +4,7 @@ function Contact() {
 
 
   return (
-      <section className="contact__wrapper panel" id="contact">
+      <section className="contact__wrapper slide" id="contact">
         <h1>Contact</h1>
      </section>
   );
