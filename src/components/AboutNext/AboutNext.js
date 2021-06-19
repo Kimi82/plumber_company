@@ -1,46 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './AboutNext.css'
 
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+function useOnScreen(options){
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(()=>{
+   const observer = new IntersectionObserver(([entry])=>{
+     setIsVisible(entry.isIntersecting);
+   }, options); 
+   if(ref.current){
+     observer.observe(ref.current);
+   }
+   return () =>{
+     if(ref.current){
+      observer.unobserve(ref.current)
+     }
+   }
+  }
+  ,[ref, options])
+  return [ref, isVisible]
+}
 
 
-gsap.registerPlugin(ScrollTrigger);
-
-
-
-
-function AboutNext() {
-
-
-
+function AboutNext() {  
+const [ref, isVisible] = useOnScreen({threshold: 0.3})
   
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  useEffect(() => {
-    const wrapper = document.querySelector(".aboutNext__textWrapper");
+useEffect(() => {
+    const wrapper = document.querySelector(".aboutNext"); //__textWrapper
     const paragraphs = document.querySelectorAll('p');
-  async function demo() {
-   // await sleep(2000);
-    console.log(paragraphs)
-    gsap.fromTo(paragraphs, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: .5, duration: 2, scrollTrigger: {
-      trigger: wrapper,
-      start: 'top 20%',
-      markers: true,
-    }})
+    console.log(isVisible)
+    if(isVisible){
+    gsap.fromTo(paragraphs, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: .5, duration: 1})}    
 
-  }
-  demo();
-   }, [])
+  }, [isVisible])
 
-    return (
-    <section className="aboutNext slide" id="aboutNext">
+      return (
+    <section className="aboutNext slide" id="aboutNext" ref={ref}>
     <div className="aboutNext__textWrapper"> 
       <p>Jesteśmy grupą ludzi która</p>
       <p><span className="color">buduje</span> domy z pasją i poświeceniem.</p>
-      <p>Zbudujemy rowniez Twoj</p>
+      <p>Zbudujemy rowniez Twój</p>
       <p><span className="color">wymarzony dom!</span></p>
       </div>
     </section>

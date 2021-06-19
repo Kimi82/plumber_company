@@ -14,6 +14,7 @@
 p {
   font-size: 7em;
   padding: 20px 70px 20px;
+  opacity: 0;
 }
 
 .color {
