@@ -17,9 +17,35 @@ p {
   opacity: 0;
 }
 
-.color {
-  background-color: #ff00ff;
+.aboutNext__textWrapper--color1, .aboutNext__textWrapper--color2 {
   padding: 0 20px 0;
   margin-left: -20px;
+}
+
+.aboutNext__textWrapper--color1:before, .aboutNext__textWrapper--color2:before {
+  width: 45%;
+  position: absolute;
+  left: -15px;
+  z-index: -11;
+  content: '';
+}
+
+.aboutNext__textWrapper--color1:before {
+  background-color: #e4812b;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 55%;
+  content: '';
+}
+
+.aboutNext__textWrapper--color2:before {
+  width: 60%;
+  background-color: #2de636;
+  height: 100%;
+  position: absolute;
+  top: 10%;
+  content: '';
 }
 /*# sourceMappingURL=AboutNext.css.map */

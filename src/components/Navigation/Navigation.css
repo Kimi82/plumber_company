@@ -5,7 +5,12 @@
           box-sizing: border-box;
 }
 
+li {
+  list-style-type: none;
+}
+
 .navigation {
+  overflow: hidden;
   position: fixed;
   z-index: 1;
   top: 5%;
@@ -47,8 +52,9 @@ a {
 }
 
 .navigation__item:hover:after {
-  width: calc(100% + 180px);
-  left: 0;
+  display: block;
+  width: calc(120%);
+  left: -10%;
 }
 
 .navigation__item--block {

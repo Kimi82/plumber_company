@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import './Services.css'
+import Card from './Card/Card.js'
 function Services() {
 
 
   return (
-      <section className="services__wrapper slide" id="services">
-        <h1>Usługi</h1>
+      <section className="services slide" id="services">
+        <Card title={"tytuł"} galleryImage={["1", "2", "3"]} details={"details"}/>
      </section>
   );
 }

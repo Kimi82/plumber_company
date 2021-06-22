@@ -2,7 +2,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
-  overflow: hidden;
+  //overflow: hidden;
   color: white;
 }
 
@@ -16,10 +16,6 @@ body {
    height: 100vh;
    position: absolute;
    background-color: whitesmoke;
-   overflow-y: scroll;
-   scroll-behavior: smooth;
+   //overflow-y: scroll;
+   //scroll-behavior: smooth;
 }
-
-
-
- 

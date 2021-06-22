@@ -3,9 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     //transition: all .2s linear;
-}
+    
+  }
+li{
+      list-style-type: none;
 
+}
 .navigation{
+    overflow: hidden;
     position: fixed;
     z-index: 1;
     top:5%;
@@ -22,6 +27,7 @@ a{
 }
 
 .navigation__item {
+  
     text-transform: uppercase;
     display: inline-block;
     position: relative;
@@ -39,9 +45,10 @@ a{
         width: 0;
       }
       &:hover:after {
-        width: calc(100% + 180px); 
-        //transform: translateY(10%);
-        left: 0; 
+        display: block;
+        width: calc(120%); 
+        //transform: translateY(40px);
+        left: -10%; 
       }
 }
 
