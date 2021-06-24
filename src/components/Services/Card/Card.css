@@ -67,16 +67,18 @@
 
 .slides {
   position: relative;
-  width: 100%;
+  width: 300%;
+  margin-left: 200%;
   height: 100%;
   background-color: pink;
+  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .slides__item {
-  position: absolute;
+  position: relative;
   height: 100%;
   width: 100%;
   background-color: #00ff00;

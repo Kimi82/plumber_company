@@ -1,43 +1,46 @@
 import React, {useEffect, useState} from 'react';
 import './Card.css'
-import { gsap } from "gsap";
+import { gsap, TweenLite } from "gsap";
 
 function Card({title, galleryImage, details}) {
 
 const [slides, setSlides] = useState([])
-const [currentSlide, setCurrentSlide] = useState(0)
+const [currentSlide, setCurrentSlide] = useState(1)
 useEffect(() => {
-  const slides = document.querySelectorAll(".slides__item")
-  console.log(slides)
-  let helperArray = [];
-  Object.keys(slides).map(function(key, index) {
-    helperArray.push(slides[index])
-  });
-  setSlides(helperArray)
+  const slideDiv = document.querySelector(".slides")
+  // const slides = document.querySelectorAll(".slides__item")
+  // console.log(slides)
+  // let helperArray = [];
+  // Object.keys(slides).map(function(key, index) {
+  //   helperArray.push(slides[index])
+  // });
+  setSlides(slides)
 }, [])
 //console.log(slides)
 
 const nextSlide = () => {
-  let helperArray = [...slides, ...slides, ...slides, ...slides]
-  if(currentSlide <= helperArray.length){ 
+  // let helperArray = [...slides, ...slides, ...slides, ...slides]
+  // if(currentSlide <= helperArray.length){ 
+    if(currentSlide <= 0 ) return; 
   setCurrentSlide(currentSlide+1)
-  gsap.fromTo(helperArray[currentSlide], {opacity: 1}, {opacity: 0, duration: 1});
+  TweenLite.to(".slides", 2, {xPercent:-33.3*currentSlide}); 
+  //gsap.fromTo(slides[currentSlide], {left:"0px"}, {left: "-308px", duration:2})
 }
-}
+//}
 
 const prevSlide = () => {
-  let helperArray = [...slides, ...slides, ...slides, ...slides]
-  if(currentSlide > 0){
-    setCurrentSlide(currentSlide-1)
-    gsap.fromTo(helperArray[currentSlide], {opacity: 0}, {opacity: 1, duration: 1});
+  // let helperArray = [...slides, ...slides, ...slides, ...slides]
+  // if(currentSlide > 0){
+  //   setCurrentSlide(currentSlide-1)
+  if(currentSlide <= 0 ) return;
+  setCurrentSlide(currentSlide-1)
+  TweenLite.to(".slides", 2, {xPercent:33.3*currentSlide});
   }
-  }
+  //}
 console.log(currentSlide)
   return (
       <section className="card">
         <div className="card__title">{title}</div>
-        
-
         <div className="card__gallery">
           <div className="slides">
             <div className="slides__item">JEDEN</div>

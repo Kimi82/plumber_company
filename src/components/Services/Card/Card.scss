@@ -35,12 +35,14 @@
 
 .slides{
     position: relative;
-    width: 100%;
+    width: 300%; //TODO give there a length of array with slides
+    margin-left:200%;
     height: 100%;
     background-color: pink;
+    display: block;
     display: flex;
     &__item{
-        position: absolute;
+        position: relative;
         height: 100%;
         width: 100%;
         background-color: #00ff00;
