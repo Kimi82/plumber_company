@@ -6,6 +6,7 @@ function Card({title, galleryImage, details}) {
 
 const [slides, setSlides] = useState([])
 const [currentSlide, setCurrentSlide] = useState(1)
+
 useEffect(() => {
   const slideDiv = document.querySelector(".slides")
   // const slides = document.querySelectorAll(".slides__item")
@@ -14,29 +15,27 @@ useEffect(() => {
   // Object.keys(slides).map(function(key, index) {
   //   helperArray.push(slides[index])
   // });
-  setSlides(slides)
+  setSlides(slideDiv);
 }, [])
 //console.log(slides)
 
 const nextSlide = () => {
-  // let helperArray = [...slides, ...slides, ...slides, ...slides]
-  // if(currentSlide <= helperArray.length){ 
-    if(currentSlide <= 0 ) return; 
+  if(currentSlide <= 0 || currentSlide > slides.children.length-1 ) return; 
   setCurrentSlide(currentSlide+1)
-  TweenLite.to(".slides", 2, {xPercent:-33.3*currentSlide}); 
-  //gsap.fromTo(slides[currentSlide], {left:"0px"}, {left: "-308px", duration:2})
+  TweenLite.to(".slides", 1, {x:(-slides.children[0].clientWidth * currentSlide-1)+"px"});
 }
-//}
+
 
 const prevSlide = () => {
   // let helperArray = [...slides, ...slides, ...slides, ...slides]
   // if(currentSlide > 0){
   //   setCurrentSlide(currentSlide-1)
-  if(currentSlide <= 0 ) return;
+  if(currentSlide <= 1) return;
   setCurrentSlide(currentSlide-1)
-  TweenLite.to(".slides", 2, {xPercent:33.3*currentSlide});
+  TweenLite.to(".slides", 1, {x:(slides.children[0].clientWidth * currentSlide+1)+"px"});
   }
   //}
+
 console.log(currentSlide)
   return (
       <section className="card">
