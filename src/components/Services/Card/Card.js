@@ -5,40 +5,33 @@ import { gsap, TweenLite } from "gsap";
 function Card({title, galleryImage, details}) {
 
 const [slides, setSlides] = useState([])
-const [currentSlide, setCurrentSlide] = useState(1)
+
 
 useEffect(() => {
   const slideDiv = document.querySelector(".slides")
-  // const slides = document.querySelectorAll(".slides__item")
-  // console.log(slides)
-  // let helperArray = [];
-  // Object.keys(slides).map(function(key, index) {
-  //   helperArray.push(slides[index])
-  // });
   setSlides(slideDiv);
 }, [])
-//console.log(slides)
+ 
+var index = 0,
+    offset = 0
 
 const nextSlide = () => {
-  if(currentSlide <= 0 || currentSlide > slides.children.length-1 ) return; 
-  setCurrentSlide(currentSlide+1)
-  TweenLite.to(".slides", 1, {x:(-slides.children[0].clientWidth * currentSlide-1)+"px"});
+  if(offset ===  -(slides.children.length-1)*slides.children[0].clientWidth) return;
+    offset -= slides.children[0].clientWidth;
+    index ++;
+    gsap.to(".slides", 0.6, {x : offset})
 }
 
-
 const prevSlide = () => {
-  // let helperArray = [...slides, ...slides, ...slides, ...slides]
-  // if(currentSlide > 0){
-  //   setCurrentSlide(currentSlide-1)
-  if(currentSlide <= 1) return;
-  setCurrentSlide(currentSlide-1)
-  TweenLite.to(".slides", 1, {x:(slides.children[0].clientWidth * currentSlide+1)+"px"});
+  if(offset === 0) return;
+    offset += slides.children[0].clientWidth;
+    index--;
+    gsap.to(".slides", 0.6, {x : offset})
   }
-  //}
 
-console.log(currentSlide)
+
   return (
-      <section className="card">
+    <section className="card">
         <div className="card__title">{title}</div>
         <div className="card__gallery">
           <div className="slides">
@@ -55,6 +48,7 @@ console.log(currentSlide)
         
         <div className="card__opinion">3</div>
      </section>
+     
   );
 }
 

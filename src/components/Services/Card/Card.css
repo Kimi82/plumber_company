@@ -1,4 +1,5 @@
 .card {
+  margin-right: 2%;
   overflow: hidden;
   width: 20vw;
   height: 40vh;
@@ -82,6 +83,12 @@
   height: 100%;
   width: 100%;
   background-color: #00ff00;
+}
+
+.slides__item-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .slides__item:nth-child(1) {
