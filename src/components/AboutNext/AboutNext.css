@@ -6,13 +6,11 @@
 
 .aboutNext__textWrapper {
   position: relative;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
 }
 
 p {
-  font-size: 7em;
+  position: relative;
+  font-size: 7vw;
   padding: 20px 70px 20px;
   opacity: 0;
 }
@@ -30,22 +28,27 @@ p {
   content: '';
 }
 
+.aboutNext__textWrapper--color1 {
+  position: relative;
+}
+
 .aboutNext__textWrapper--color1:before {
   background-color: #e4812b;
   height: 100%;
+  width: 101%;
   position: absolute;
-  top: 0;
-  left: 35%;
-  width: 55%;
   content: '';
 }
 
+.aboutNext__textWrapper--color2 {
+  position: relative;
+}
+
 .aboutNext__textWrapper--color2:before {
-  width: 60%;
+  width: 10%;
   background-color: #2de636;
   height: 100%;
   position: absolute;
-  top: 10%;
   content: '';
 }
 /*# sourceMappingURL=AboutNext.css.map */

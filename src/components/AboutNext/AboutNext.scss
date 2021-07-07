@@ -7,13 +7,14 @@
     //    flex-direction: column;
     //    justify-items: center;  
     position: relative;               
-    top: 50%;                         
-    transform: translate(0, -50%)       
+    // top: 50%;                         
+    // transform: translate(0, -50%)       
     }
 }
 
 p{  
-    font-size: 7em;
+    position: relative;
+    font-size: 7vw;
     padding: 20px 70px 20px;  
     opacity:0;
 }
@@ -29,24 +30,23 @@ p{
     }
 }
 .aboutNext__textWrapper--color1{
+    position: relative;
     &:before{
         background-color: rgb(228, 129, 43);
         height: 100%;
+        width: 101%;
         position: absolute;
-        top: 0;
-        left: 35%;
-        width:55%;
         content: '';
     }
 }
 
 .aboutNext__textWrapper--color2{
+    position: relative;
     &:before{
-        width: 60%;
+        width: 10%;
         background-color: #2de636;
         height: 100%;
         position: absolute;
-        top: 10%;
         content: '';
     }
 }

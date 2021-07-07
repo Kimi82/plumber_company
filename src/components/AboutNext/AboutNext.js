@@ -17,28 +17,24 @@ function AboutNext() {
     contactButtonColor = CSSRulePlugin.getRule(".navigation__item--block:after")
   
   gsap.registerPlugin(ScrollTrigger);
-//    gsap.fromTo(paragraphs, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: .5, duration: 2, scrollTrigger: {
-//      trigger: wrapper,
-//      start: 'top 40%',
-//      markers: true
-//  }})
+
 const tl = gsap.timeline({scrollTrigger: {
        trigger: wrapper,
        start: 'top 40%',
        //markers: true
    }});
 tl.fromTo(paragraphs, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: .5, duration: 1})
-  .fromTo(paragraphColor1, {width: 0}, {width: "60%", duration: .5})
-  .fromTo(paragraphColor2, {width: 0}, {width: "48%", duration: .5})
+  .fromTo(paragraphColor1, {width: 0}, {width: "101%", duration: .5})
+  .fromTo(paragraphColor2, {width: 0}, {width: "101%", duration: .5})
 },[])
 
     return (
-    <section className="aboutNext slide" id="aboutNext" >
+    <section className="aboutNext" id="aboutNext" >
     <div className="aboutNext__textWrapper"> 
-      <p>Jesteśmy grupą ludzi która</p>
-      <p><span className="aboutNext__textWrapper--color1 color" id="test">buduje</span> domy z pasją i poświeceniem.</p>
-      <p>Zbudujemy rowniez Twój</p>
-      <p><span className="aboutNext__textWrapper--color2 color" id="test">wymarzony dom!</span></p>
+      <p class>We are a group of people that</p>
+      <p><span className="aboutNext__textWrapper--color1">builds houses</span>with passion </p>
+      <p>We will also build yours</p>
+      <p><span className="aboutNext__textWrapper--color2">dream house!</span></p>
       </div>
     </section>
   );

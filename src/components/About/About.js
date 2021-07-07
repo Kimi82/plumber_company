@@ -19,9 +19,9 @@ const randomTitlePhoto = () => {
 
 
   return (
-    <section className="about__wrapper slide" id="about"> 
+    <section className="about__wrapper" id="about"> 
       <img src={randomTitlePhoto()}/>
-      <div className="about__title"><h1>JESTEŚMY FACHOWCAMI,<br/> MOŻEMY BYĆ NIMI<br/> I DLA CIEBIE</h1></div>
+      <div className="about__title"><h1>WE ARE PROFESSIONALS,<br/> WE CAN BE THEM<br/> FOR YOU TOO</h1></div>
 
       <div className="about__buttonWrapper">
         <span className="about_progressBar"><div className="about__progressBar--value"></div></span>

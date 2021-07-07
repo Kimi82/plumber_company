@@ -14,7 +14,7 @@ function Navigation() {
 <li><a href="#about" className="navigation__item">About</a></li>
 <li><a href="#services" className="navigation__item">Services</a></li>
 <li><a href="#realizations" className="navigation__item">Realizations</a></li>
-<li><a href="#contact" className="navigation__item--block">Contact</a></li>
+<li><a href="#contact" className="navigation__item--block" id="navigation__item--color">Contact</a></li>
 </ul>  
 
 

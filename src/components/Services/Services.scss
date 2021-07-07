@@ -1,14 +1,14 @@
 .services{
-    scroll-snap-align:center;
-    position: relative;
+    //scroll-snap-align:center;
+    //position: relative;
     //top: 10vh;
     width: 100vw;
     height: 100vh; 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #10A296;
-}
+    position: relative;
+    flex-direction: column;
+    //background-color: #10A296;
+    background-color: #000000;
+}   
 
 
-    

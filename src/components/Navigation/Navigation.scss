@@ -60,6 +60,7 @@ a{
     position: relative;
     z-index: 100;
     //top: -10px;
+    color: black;
     padding: 10px 10px;
     &:after {
     z-index: -1;     
@@ -69,14 +70,17 @@ a{
     left: 0px;
     bottom: 0px;
     content: '';
-    background: black;
+    background: white;
     transition: all .8s;
       }
       &:hover:after {
-         //height: 0%;
          transform: translate(0%, 100%); 
-         //left: 0;
-
       }
 }
 
+#navigation__item--color{
+  transition: all .8s;
+  &:hover{
+    color:white;
+  }
+}
