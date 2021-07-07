@@ -2,12 +2,13 @@ import React, {useState, useEffect, useRef} from 'react';
 //import {ReactFullpage as fullpage} from '@fullpage/react-fullpage';
 import {SectionsContainer, Section} from 'react-fullpage';
 import './App.css'
-import Navigation from './components/Navigation/Navigation.js'
-import About from './components/About/About.js'
-import Services from './components/Services/Services.js'
-import Realizations from './components/Realizations/Realizations.js'
-import Contact from './components/Contact/Contact.js'
-import AboutNext from './components/AboutNext/AboutNext.js'
+// import Navigation from './components/Navigation/Navigation.js'
+// import About from './components/About/About.js'
+// import Services from './components/Services/Services.js'
+// import Realizations from './components/Realizations/Realizations.js'
+// import Contact from './components/Contact/Contact.js'
+// import AboutNext from './components/AboutNext/AboutNext.js'
+import Test from './components/test/test.js'
 function App() {
 
   
@@ -17,11 +18,12 @@ function App() {
 
     
     <div className="main__wrapper">
-            <About/>
+            {/* <About/>
             <AboutNext/>
-             <Navigation/>
-            <Realizations/>
-            {/*<Services/>
+             <Navigation/> */}
+            <Test/>
+            {/*<Realizations/>
+            <Services/>
             <Contact/> */}
     </div> 
      

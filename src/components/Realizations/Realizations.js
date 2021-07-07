@@ -21,97 +21,103 @@ function Realizations() {
       image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Big_Pine_landscape.jpg",
     },
   ]
-  
-  const pageConstants = {
-    DEFAULT_INDEX: 0,
-    ACTIVE_ZINDEX: '500',
-    INACTIVE_TRANSLATE: '100%',
-    POLYGON_INACTIVE: 'polygon(0 76%, 100% 89%, 100% 100%, 0% 100%)',
-    POLYGON_ACTIVE: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-  };
 
-const [list, setList] = useState([]);
-const [lenght, setLenght] = useState(sliderData.length);
-const [activeColorIndex, setActiveIndex] = useState(0);
-const [disabled, setDisabled] = useState(false);
-
-const collectionContainer = useRef(null);
-const bgListContainer = useRef(null);
-
-const tl = gsap.timeline();
-const tl2 = gsap.timeline();
-
-var selectedColor = function () { var _a; return (_a = list[activeColorIndex]) === null || _a === void 0 ? void 0 : _a.color; };
-
-const listExists = () =>{
-  return(
-    (bgListContainer.current && 
-    bgListContainer.current.children &&
-    bgListContainer.current.children.lenght > 0) ||
-    (collectionContainer.current &&
-    collectionContainer.current.children &&
-    collectionContainer.current.children.lenght > 0)
-  )
-}
-
-const elementList = useCallback(()=>{
-  if(listExists()){
-    return Array.prototype.slice.call(bgListContainer.current?.children)
-  }
-}, [])
-
-const collectionList = useCallback(()=>{
-  if(listExists()){
-    return Array.prototype.slice.call(collectionContainer.current?.children)
-  }
-},[])
-
-const rednerBgList = () =>{
-  return(
-    sliderData.map((item) =>(
-      <div className="realization__nextImage" ref={bgListContainer}><img src={item.image}/></div>
-    )))
-}
-
-const rednerCollection = () =>{
-  return(
-  sliderData.map((item) =>(
-    <div className="realization__currentImage" ref={collectionContainer}><img src={item.image}/></div>
-  )))
-}
-
-const initElements =  useCallback(()=>{
-  if(listExists()){
-    elementList()[pageConstants.DEFAULT_INDEX].classList.add('active');
-    elementList()[pageConstants.DEFAULT_INDE].style.zIndex = pageConstants.ACTIVE_ZINDEX;
-    for(let i=pageConstants.DEFAULT_INDEX+1; i<lenght; i++){
-      gsap.to(elementList()[i],{
-        duration: 0,
-        zIndex: -1,
-        autoAlpha: 0,
-        translateX: pageConstants.DEFAULT_INDEX
-      })
-    }
-    collectionList()[pageConstants.DEFAULT_INDEX].classList.add('active');
-    collectionList()[pageConstants.DEFAULT_INDEX].style.zIndex = pageConstants.ACTIVE_ZINDEX;
-    for(let j = pageConstants.DEFAULT_INDEX+1; j<lenght;){
-      gsap.to(collectionList()[j],{
-        duration: 0,
-        zIndex: -1,
-        scale: 1.4,
-        clipPath: pageConstants.POLYGON_INACTIVE,
-        autoAlpha: 0,
-        translateY: pageConstants.INACTIVE_TRANSLATE
-      })
-    }
-  }
-},[lenght, collectionList, elementList])
 
 useEffect(() => {
-  setLenght(sliderData.length)
-  initElements()
-}, [list, lenght, initElements()])
 
+
+
+var slideDelay = 1.5;
+var slideDuration = 99999.3;
+var snapX;
+
+var slides = document.querySelectorAll(".slide");
+var prevButton = document.querySelector("#prev");
+var nextButton = document.querySelector("#next");
+var progressWrap = gsap.utils.wrap(0, 1);
+
+var numSlides = slides.length;
+
+gsap.set(slides, {
+  backgroundColor: "random([red, blue, green, purple, orange, yellow, lime, pink])",
+  xPercent: i => i * 100
+});
+
+var wrap = gsap.utils.wrap(-100, (numSlides - 1) * 100);
+var timer = gsap.delayedCall(slideDelay);
+
+var animation = gsap.to(slides, {
+  xPercent: "+=" + (numSlides * 100),
+  duration: 1,
+  ease: "none",
+  paused: true,
+  repeat: -1,
+  modifiers: {
+    xPercent: wrap
+  }
+});
+
+var proxy = document.createElement("div");
+var slideAnimation = gsap.to({}, {});
+var slideWidth = 0;
+var wrapWidth = 0;
+resize();
+
+
+window.addEventListener("resize", resize);
+
+prevButton.addEventListener("click", function() {
+  animateSlides(1);
+});
+
+nextButton.addEventListener("click", function() {
+  animateSlides(-1);
+});
+
+function updateDraggable() {
+  timer.restart(true);
+  slideAnimation.kill();
+  this.update();
+}
+
+function animateSlides(direction) {
+    
+  timer.restart(true);
+  slideAnimation.kill();
+  
+  var x = snapX(gsap.getProperty(proxy, "x") + direction * slideWidth);
+  
+  slideAnimation = gsap.to(proxy, {
+    x: x,
+    duration: slideDuration,
+    onUpdate: updateProgress
+  });  
+}
+
+
+function updateProgress() { 
+  animation.progress(progressWrap(gsap.getProperty(proxy, "x") / wrapWidth));
+}
+
+function resize() {
+  
+  var norm = (gsap.getProperty(proxy, "x") / wrapWidth) || 0;
+  
+  slideWidth = slides[0].offsetWidth;
+  wrapWidth = slideWidth * numSlides;
+  snapX = gsap.utils.snap(slideWidth);
+  
+  gsap.set(proxy, {
+    x: norm * wrapWidth
+  });
+  
+  animateSlides(0);
+  slideAnimation.progress(1);
+}
+
+}, [])
+  
+ 
 const buttonsValue =[">", "<"]
   return (
       <section className="realization"  id="realizations">
@@ -121,17 +127,19 @@ const buttonsValue =[">", "<"]
             <h1 className="realization__currentTextTitle">Robota numer1</h1>
             <h3 className="realization__currentTextBody">Tutaj opis tej roboty i tka dalej i tak dalej</h3>
           </div>
-           <div className="realization__currentImageWrapper" ref={collectionContainer}>
-            {rednerCollection()}
+           <div className="realization__currentImageWrapper" >
+            <div className="realization__currentImage">
+            <img className="slide" src={sliderData[0].image}/>
+            </div>
            </div> 
         </div>
         
-        <div className="realization__next" style={{
-          backgroundColor: selectedColor() && selectedColor(),
-        }}>
+        <div className="realization__next">
           {/* <div className="realization__nextImage">THERE WILL BE NEXT IMAGE</div> */}
-          <div className="realization__nextImageWrapper" ref={bgListContainer}>
-          {rednerBgList()}
+          <div className="realization__nextImageWrapper" >
+          <div className="realization__nextImage"> 
+           <img src={sliderData[2].image}/>
+           </div>
           </div>
           <div className="realization__nextText">
             <h3  className="realization__nextTextTitle">NEXT PROJECT</h3>
@@ -139,9 +147,9 @@ const buttonsValue =[">", "<"]
           </div>
           <div className="realization__nextButtons">
             <div className="realization__nextButton realization__nextButton--next">
-              <span className="realization__nextButtonArrow" >{buttonsValue[0]}</span></div>
+              <span className="realization__nextButtonArrow" id="next" >{buttonsValue[0]}</span></div>
             <div className="realization__nextButton realization__nextButton--prev">
-              <span className="realization__nextButtonArrow">{buttonsValue[1]}</span></div>
+              <span className="realization__nextButtonArrow" id="prev">{buttonsValue[1]}</span></div>
           </div>
         </div>
      
