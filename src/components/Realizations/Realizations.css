@@ -24,11 +24,24 @@
   display: flex;
 }
 
+.realization__current:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+}
+
 .realization__currentText {
   width: 50%;
   height: 100%;
   position: relative;
   top: 20%;
+}
+
+.realization__currentTextWrapper {
+  position: absolute;
+  background-color: #000000;
 }
 
 .realization__currentTextTitle {
@@ -42,7 +55,6 @@
 .realization__currentImageWrapper {
   width: 60%;
   height: 100%;
-  background-color: yellow;
   position: relative;
 }
 
@@ -80,13 +92,23 @@
 }
 
 .realization__nextImage {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
 }
 
 .realization__nextImage img {
+  max-height: 100%;
   max-width: 100%;
+  position: absolute;
+}
+
+.realization__nextText {
+  position: relative;
+}
+
+.realization__nextTextWrapper {
+  position: absolute;
 }
 
 .realization__nextTextTitle {
@@ -96,6 +118,7 @@
 
 .realization__nextTextBody {
   font-size: 1.2em;
+  background-color: #000000;
 }
 
 .realization__nextButton {

@@ -10,5 +10,40 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #000000;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.services h1 {
+  font-size: 3em;
+}
+
+.services__points {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 7%;
+  width: 80%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.services__points p {
+  font-size: 3em;
+}
+
+.services__points p:after {
+  content: "";
+  position: absolute;
+  bottom: 2%;
+  right: 10%;
+  height: 0;
+  width: 80%;
+  border-bottom: 2px solid #ffffff;
 }
 /*# sourceMappingURL=Services.css.map */

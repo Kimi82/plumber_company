@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './About.css'
+import { gsap } from "gsap";
+import { CustomEase } from "gsap/CustomEase";
 
 
 function About() {

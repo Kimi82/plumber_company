@@ -1,12 +1,71 @@
-.contact__wrapper{
-    scroll-snap-align:center;
+.contact{
     position: relative;
-    //top: 10vh;
     width: 100vw;
     height: 100vh; 
     display: flex;
-    background-color: #FA987D;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__header{
+       margin-bottom: 10%;     
+        font-size: 4em;;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 30%;
+        &Part{
+            font-size: 2vw;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            &Input{
+                width: 40%;
+                margin-left: 50px;
+                border: 0;
+                outline: 0;
+                background: transparent;
+                border-bottom: 1px solid cyan;
+            }
+        }
+    }
+    &__submit {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        &Title{
+            margin-right: 15px;
+            font-size: 2em;
+        }
+        &Button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 50%;
+        }
+        &Teader{
+            color: red;
+        }
+    }
+      
+}
+
+form{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
 }
 
 
-    
+
