@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useRef } from 'react';
 //import {ReactFullpage as fullpage} from '@fullpage/react-fullpage';
  import {SectionsContainer, Section} from 'react-fullpage';
  import './App.css'
@@ -8,8 +8,9 @@ import React, {useState, useEffect, useRef} from 'react';
  import Realizations from './components/Realizations/Realizations.js'
  import Contact from './components/Contact/Contact.js'
  import AboutNext from './components/AboutNext/AboutNext.js'
-function App() {
 
+
+function App() {
   
   return (
      
@@ -17,12 +18,12 @@ function App() {
 
     
     <div className="main__wrapper">
-            {/*<About/>
+            {/* <About/>
             <AboutNext/>
-            <Navigation/>*/} 
-            <Realizations/>
-            {/*<Services/>  
-            <Contact/>*/}
+            <Navigation/> 
+            <Realizations/> */}
+            <Services/>
+            {/* <Contact/> */}
     </div> 
      
   );

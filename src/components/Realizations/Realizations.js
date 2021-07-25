@@ -2,15 +2,20 @@ import React, { useState, useRef, useEffect, useReducer } from 'react';
 import './Realizations.css'
 import { gsap, Power1 } from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger'
-//import Slider from './Slider/Slider.js'
 import CSSRulePlugin from "gsap/CSSRulePlugin"
 function Realizations() {
 
   useEffect(()=>{
+    gsap.registerPlugin(ScrollTrigger)
+
     //let wrapper = document.querySelector(".realization__current")
     //gsap.from(wrapper, {opacity: 0, scale:2, duration: 4})
-    let imageReveal = CSSRulePlugin.getRule(".realization__current:after")
-    gsap.to(imageReveal,{width:"0%", duration:2, scale: 1.2, ease: Power1.easeInOut})
+    let imageReveal = CSSRulePlugin.getRule(".realization:after")
+    gsap.to(imageReveal,{width:"0%", duration:2, scale: 1.2, ease: Power1.easeInOut, scrollTrigger:{
+      trigger: "#realizations",
+      start: 'top 40%',
+    }})
+
   })
 
   

@@ -12,6 +12,7 @@
   //background-color: #F06060;
   background-color: #000000;
   display: flex;
+  color: white;
   img{
     position: relative;
     height: 95%;
@@ -55,14 +56,14 @@ align-items: center;
   height: 60%;
   width: 5px;
   border-radius: 50px;
-  background-color: rgb(238, 225, 225);
+  background-color: #000000;
 }
 
 .about__progressBar--value {
 animation: load 3s  ease-in-out infinite ;
 //box-shadow: 0 10px 40px -10px #fff;
 border-radius: 100px;
-background: #000000;
+background: #ff00ff;
 height: 30px;
 width: 100%;
 @keyframes load {

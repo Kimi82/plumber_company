@@ -9,6 +9,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: white;
   background-color: #000000;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -19,7 +20,12 @@
 }
 
 .services h1 {
-  font-size: 3em;
+  font-size: 30vh;
+  position: relative;
+  letter-spacing: 2vw;
+  line-height: 1;
+  color: #000000;
+  text-shadow: 2px  2px 0 #ffffff, -1px -1px 0 #ffffff,   1px -1px 0 #ffffff, -1px  1px 0 #ffffff, 1px  1px 0 #ffffff;
 }
 
 .services__points {
