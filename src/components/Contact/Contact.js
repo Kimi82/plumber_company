@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 import './Contact.css'
-import {gsap, Power1} from "gsap"
+import {gsap} from "gsap"
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import CSSRulePlugin from "gsap/CSSRulePlugin"
 
 function Contact() {
 
@@ -9,11 +10,16 @@ function Contact() {
     gsap.registerPlugin(ScrollTrigger)
     const contactForm = document.querySelector(".contact__form")
     const contactSubmit = document.querySelector(".contact__submit")
+    const navigationAdditional = CSSRulePlugin.getRule(".navigation a:after")
     const tl = gsap.timeline({scrollTrigger: {
       trigger: "#contact",
-      start: 'top 40%',
+      start: 'top 20%',
+      markers: true,
+      toggleAction: "restart pause reverse pause"
   }});
     tl.to("#contact", {backgroundColor: "white", duration:2, ease:'easeInOut'})
+    tl.to(".navigation a", {color: "black"})
+    tl.to(navigationAdditional, {backgroundColor: "black"})
     tl.fromTo(".contact__header", {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'easeInOut'});
     tl.fromTo(contactForm.children, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'easeInOut'},'label');
     tl.fromTo(contactSubmit.children, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'easeInOut'},'label');  

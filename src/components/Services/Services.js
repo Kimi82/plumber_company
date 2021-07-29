@@ -6,24 +6,26 @@ import CSSRulePlugin from "gsap/CSSRulePlugin"
 //import Card from './Card/Card.js'
 function Services() {
 
-  // useEffect(()=>{
-  //      const paragraphs = document.querySelectorAll(".services__points p")
-    
-  //      //gsap.fromTo(paragraphs, {y: '+=100', scale:.7, opacity: 0}, {y: 0, scale:1, opacity: 1, stagger: .5, duration: 1})
-  //   })
+  useEffect(()=>{
+       
+      
+      })
 
-  //   useEffect(()=>{
-  //     gsap.registerPlugin(ScrollTrigger)
-  
-  //     //let wrapper = document.querySelector(".realization__current")
-  //     //gsap.from(wrapper, {opacity: 0, scale:2, duration: 4})
-  //     let imageReveal = CSSRulePlugin.getRule(".services h1:after")
-  //     gsap.to(imageReveal,{height:"0%", duration:2, scale: 1.2, ease: Power1.easeInOut, scrollTrigger:{
-  //       trigger: "#services",
-  //       start: 'top 40%',
-  //     }})
-  
-  //   })
+     useEffect(()=>{
+       gsap.registerPlugin(ScrollTrigger)
+       const paragraphsUnderline = CSSRulePlugin.getRule(".services__points p:after")
+     
+       const tl = gsap.timeline({scrollTrigger:{
+        trigger: "#services",
+        start: 'top 25%',
+     }})
+
+     tl.to(".services__title h1", {color:"white", duration:3})
+     tl.fromTo(".services__title h3",{opacity:0, scale:.9},{opacity:1, scale:1, duration:.8})
+     tl.fromTo(".services__points p", {y: '+=100', scale:.9, opacity: 0}, {y: 0, scale:1, opacity: 1, stagger: .2, duration: .7})
+     tl.fromTo(paragraphsUnderline, {width: 0}, {width:"80%", stagger: 1, duration: 1, ease: 'easeInOut'}) 
+     
+     })
 
 
 

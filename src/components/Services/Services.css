@@ -14,18 +14,21 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .services h1 {
-  font-size: 30vh;
+  font-size: 40vh;
   position: relative;
   letter-spacing: 2vw;
   line-height: 1;
   color: #000000;
   text-shadow: 2px  2px 0 #ffffff, -1px -1px 0 #ffffff,   1px -1px 0 #ffffff, -1px  1px 0 #ffffff, 1px  1px 0 #ffffff;
+}
+
+.services h3 {
+  text-align: center;
+  position: relative;
+  top: 15%;
 }
 
 .services__points {
