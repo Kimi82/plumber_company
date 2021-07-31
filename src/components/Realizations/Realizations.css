@@ -16,18 +16,9 @@
           align-items: flex-end;
 }
 
-.realization:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  top: 0;
-}
-
 .realization__current {
   height: 80vh;
-  width: 60vw;
+  width: 70vw;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,6 +39,7 @@
 
 .realization__currentTextTitle {
   font-size: 3em;
+  font-family: 'Oswald', sans-serif !important;
 }
 
 .realization__currentTextBody {
@@ -73,7 +65,7 @@
 
 .realization__next {
   height: 25vh;
-  width: 50vw;
+  width: 60vw;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,20 +98,34 @@
 
 .realization__nextText {
   position: relative;
+  width: 12vh;
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .realization__nextTextWrapper {
   position: absolute;
+  width: 100%;
 }
 
 .realization__nextTextTitle {
+  width: 100%;
   font-size: .8em;
   letter-spacing: 1.5px;
+  font-family: 'Oswald Regular 400', sans-serif;
+  background-color: #000000;
 }
 
 .realization__nextTextBody {
+  width: 100%;
   font-size: 1.2em;
   background-color: #000000;
+  text-align: center;
 }
 
 .realization__nextButton {
@@ -139,7 +145,7 @@
 }
 
 .realization__nextButtonArrow {
-  color: #ff00ff;
+  color: #2de636;
 }
 
 .realization__nextButton--prev {

@@ -5,18 +5,17 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import CSSRulePlugin from "gsap/CSSRulePlugin"
 function Realizations() {
 
-  useEffect(()=>{
-    gsap.registerPlugin(ScrollTrigger)
+  // useEffect(()=>{
+  //   gsap.registerPlugin(ScrollTrigger)
+  //   //let wrapper = document.querySelector(".realization__current")
+  //   //gsap.from(wrapper, {opacity: 0, scale:2, duration: 4})
+  //   let imageReveal = CSSRulePlugin.getRule(".realization:after")
+  //   gsap.to(imageReveal,{width:"0%", duration:2, scale: 1.2, ease: Power1.easeInOut, scrollTrigger:{
+  //     trigger: "#realizations",
+  //     start: 'top 40%',
+  //   }})
 
-    //let wrapper = document.querySelector(".realization__current")
-    //gsap.from(wrapper, {opacity: 0, scale:2, duration: 4})
-    let imageReveal = CSSRulePlugin.getRule(".realization:after")
-    gsap.to(imageReveal,{width:"0%", duration:2, scale: 1.2, ease: Power1.easeInOut, scrollTrigger:{
-      trigger: "#realizations",
-      start: 'top 40%',
-    }})
-
-  })
+  // })
 
   
   const sliderData = [
@@ -98,95 +97,102 @@ useEffect(()=>{
   const prevSlide = () => {
 
     const tl = gsap.timeline()
-    tl.to(TcurrentImgs[0], {autoAlpha:0, duration:fade},"image")
-    tl.to(TnextImgs[0], {autoAlpha:0, duration:fade},"image")
-    tl.to(TcurrentImgs[1], {autoAlpha:1, duration:fade},"image")
-    tl.to(TnextImgs[1], {autoAlpha:1, duration:fade},"image")
+    tl.to(currentImgs[0], {autoAlpha:0, duration:fade},"image")
+    tl.to(nextImgs[0], {autoAlpha:0, duration:fade},"image")
+    tl.to(currentImgs[2], {autoAlpha:1, duration:fade},"image")
+    tl.to(nextImgs[2], {autoAlpha:1, duration:fade},"image")
     
-    tl.to(TcurrentText[0], {autoAlpha:0, duration:fade},"image")
-    tl.to(TnextText[0], {autoAlpha:0, duration:fade},"image")
-    tl.to(TcurrentText[1], {autoAlpha:1, duration:fade},"image")
-    tl.to(TnextText[1], {autoAlpha:1, duration:fade},"image")
+    tl.to(currentText[0], {autoAlpha:0, duration:fade},"image")
+    tl.to(nextText[0], {autoAlpha:0, duration:fade},"image")
+    tl.to(currentText[2], {autoAlpha:1, duration:fade},"image")
+    tl.to(nextText[2], {autoAlpha:1, duration:fade},"image")
+    
 
-   // currentText.push( currentText.shift() );
-   // nextText.push( nextText.shift() )
-
-   // currentImgs = currentImgs.push(currentImgs.shift())
-   // nextImgs = nextImgs.push(nextImgs.shift())
+    currentText.unshift( currentText.slice(2)[0] );
+    currentText.pop()
+    
+    nextText.unshift( nextText.slice(2)[0] )
+    nextText.pop()
+    
+    currentImgs.unshift( currentImgs.slice(2)[0] );
+    currentImgs.pop()
+    
+    nextImgs.unshift( nextImgs.slice(2)[0] )
+    nextImgs.pop()
   }
 
 
 const buttonsValue =[">", "<"]
-  return (
-      <section className="realization"  id="realizations">
-     
-        <div className="realization__current">
+return (
+  <section className="realization"  id="realizations">
+ 
+    <div className="realization__current">
 
-          <div className="realization__currentText">
-            <span className="realization__currentTextWrapper">
-              <h1 className="realization__currentTextTitle">{sliderData[2].title}</h1>
-              <h3 className="realization__currentTextBody">{sliderData[2].desc}</h3>
-            </span>
+      <div className="realization__currentText">
+        <span className="realization__currentTextWrapper">
+          <h1 className="realization__currentTextTitle">{sliderData[2].title}</h1>
+          <h3 className="realization__currentTextBody">{sliderData[2].desc}</h3>
+        </span>
+    
+        <span className="realization__currentTextWrapper">
+          <h1 className="realization__currentTextTitle">{sliderData[0].title}</h1>
+          <h3 className="realization__currentTextBody">{sliderData[0].desc}</h3>
+        </span>
         
-            <span className="realization__currentTextWrapper">
-              <h1 className="realization__currentTextTitle">{sliderData[0].title}</h1>
-              <h3 className="realization__currentTextBody">{sliderData[0].desc}</h3>
-            </span>
-            
-            <span className="realization__currentTextWrapper">
-              <h1 className="realization__currentTextTitle">{sliderData[1].title}</h1>
-              <h3 className="realization__currentTextBody">{sliderData[1].desc}</h3>
-            </span>
+        <span className="realization__currentTextWrapper">
+          <h1 className="realization__currentTextTitle">{sliderData[1].title}</h1>
+          <h3 className="realization__currentTextBody">{sliderData[1].desc}</h3>
+        </span>
 
-          </div>
-           <div className="realization__currentImageWrapper" >
-            <div className="realization__currentImage">
-                <img className="slide" src={sliderData[2].image}/>
-                <img className="slide" src={sliderData[0].image}/>
-                <img className="slide" src={sliderData[1].image}/>
-            </div>
-           </div> 
+      </div>
+       <div className="realization__currentImageWrapper" >
+        <div className="realization__currentImage">
+            <img className="slide" src={sliderData[2].image}/>
+            <img className="slide" src={sliderData[0].image}/>
+            <img className="slide" src={sliderData[1].image}/>
         </div>
-        
-        <div className="realization__next">
-          {/* <div className="realization__nextImage">THERE WILL BE NEXT IMAGE</div> */}
-          <div className="realization__nextImageWrapper" >
-          <div className="realization__nextImage">  
-                <img className="slide" src={sliderData[0].image}/>
-                <img className="slide" src={sliderData[1].image}/>
-                <img className="slide" src={sliderData[2].image}/>
-           </div>
-          </div>
-            <div className="realization__nextText">
-              
-              <div className="realization__nextTextWrapper">
-                <h3  className="realization__nextTextTitle">NEXT PROJECT</h3>
-                <h3  className="realization__nextTextBody">{sliderData[0].title}</h3>
-              </div>
-              
-              <div className="realization__nextTextWrapper">
-                <h3  className="realization__nextTextTitle">NEXT PROJECT</h3>
-                <h3  className="realization__nextTextBody">{sliderData[1].title}</h3>
-              </div>
-              
-              <div className="realization__nextTextWrapper">
-                <h3  className="realization__nextTextTitle">NEXT PROJECT</h3>
-                <h3  className="realization__nextTextBody">{sliderData[2].title}</h3>
-              </div>
-              
-
-            </div>
+       </div> 
+    </div>
+    
+    <div className="realization__next">
+      {/* <div className="realization__nextImage">THERE WILL BE NEXT IMAGE</div> */}
+      <div className="realization__nextImageWrapper" >
+      <div className="realization__nextImage">  
+            <img className="slide" src={sliderData[0].image}/>
+            <img className="slide" src={sliderData[1].image}/>
+            <img className="slide" src={sliderData[2].image}/>
+       </div>
+      </div>
+        <div className="realization__nextText">
           
-          <div className="realization__nextButtons">
-            <div className="realization__nextButton realization__nextButton--next" id="nextButtonSlide" onClick={()=>{nextSlide()}}>
-              <span className="realization__nextButtonArrow"  >{buttonsValue[0]}</span></div>
-            <div className="realization__nextButton realization__nextButton--prev" id="prevButtonSlide" onClick={()=>{prevSlide()}}>
-              <span className="realization__nextButtonArrow" >{buttonsValue[1]}</span></div>
+          <div className="realization__nextTextWrapper">
+            <h3  className="realization__nextTextTitle">NEXT PROJECT</h3>
+            <h3  className="realization__nextTextBody">{sliderData[0].title}</h3>
           </div>
+          
+          <div className="realization__nextTextWrapper">
+            <h3  className="realization__nextTextTitle">NEXT PROJECT</h3>
+            <h3  className="realization__nextTextBody">{sliderData[1].title}</h3>
+          </div>
+          
+          <div className="realization__nextTextWrapper">
+            <h3  className="realization__nextTextTitle">NEXT PROJECT</h3>
+            <h3  className="realization__nextTextBody">{sliderData[2].title}</h3>
+          </div>
+          
+
         </div>
-     
-     </section>
-  );
+      
+      <div className="realization__nextButtons">
+        <div className="realization__nextButton realization__nextButton--next" id="nextButtonSlide" onClick={()=>{nextSlide()}}>
+          <span className="realization__nextButtonArrow"  >{buttonsValue[0]}</span></div>
+        <div className="realization__nextButton realization__nextButton--prev" id="prevButtonSlide" onClick={()=>{prevSlide()}}>
+          <span className="realization__nextButtonArrow" >{buttonsValue[1]}</span></div>
+      </div>
+    </div>
+ 
+ </section>
+);
 }
 
 export default Realizations;
