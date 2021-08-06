@@ -1,28 +1,28 @@
-import React, { useState, useRef, useEffect, useReducer } from 'react';
+import React, { useEffect } from 'react';
 import './Realizations.css'
 import { gsap, Power1 } from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import CSSRulePlugin from "gsap/CSSRulePlugin"
 function Realizations() {
 
-  // useEffect(()=>{
-  //   gsap.registerPlugin(ScrollTrigger)
-  //   //let wrapper = document.querySelector(".realization__current")
-  //   //gsap.from(wrapper, {opacity: 0, scale:2, duration: 4})
-  //   let imageReveal = CSSRulePlugin.getRule(".realization:after")
-  //   gsap.to(imageReveal,{width:"0%", duration:2, scale: 1.2, ease: Power1.easeInOut, scrollTrigger:{
-  //     trigger: "#realizations",
-  //     start: 'top 40%',
-  //   }})
+  useEffect(()=>{
+    gsap.registerPlugin(ScrollTrigger)
+    //let wrapper = document.querySelector(".realization__current")
+    //gsap.from(wrapper, {opacity: 0, scale:2, duration: 4})
+    let imageReveal = CSSRulePlugin.getRule(".realization:after")
+    gsap.to(imageReveal,{width:"0%", duration:2, scale: 1.2, ease: Power1.easeInOut, scrollTrigger:{
+      trigger: "#realizations",
+      start: 'top 40%',
+    }})
 
-  // })
+  })
 
   
   const sliderData = [
     {
       title: "Chrysler Building",
       desc: "is an Art Deco skyscraper in the Turtle Bay neighborhood on the East Side of Manhattan, New York City, at the intersection of 42nd Street and Lexington Avenue near Midtown Manhattan. At 1,046 feet (319 m), it is the tallest brick building in the world with a steel framework, and was the world's tallest building for 11 months after its completion in 1930. As of 2019, the Chrysler is the 11th-tallest building in the city, tied with The New York Times Building.",
-      image: "https://tvn24.pl/biznes/najnowsze/cdn-zdjeciecb1c9dd8f57963039619a9a056878ae1-budynek-chryslera-zostal-wystawiony-na-sprzedaz-4768114/alternates/SQUARE_1280",
+      image: "https://www.smartage.pl/wp-content/uploads/2017/06/14-4.jpg",
     },
     {
       title: "Lakhta Center",
@@ -61,7 +61,7 @@ useEffect(()=>{
   gsap.set(nextText[0], {autoAlpha:1})
   gsap.set([nextText[1], nextText[2]], {autoAlpha:0})
 
-})
+},[])
 
   
 
@@ -138,9 +138,9 @@ return (
       
        <div className="realization__currentImageWrapper" >
         <div className="realization__currentImage">
-            <img className="slide" src={sliderData[2].image}/>
-            <img className="slide" src={sliderData[0].image}/>
-            <img className="slide" src={sliderData[1].image}/>
+            <img className="slide" src={sliderData[2].image} alt="1"/>
+            <img className="slide" src={sliderData[0].image} alt="2"/>
+            <img className="slide" src={sliderData[1].image} alt="3"/>
         </div>
        </div> 
     </div>
@@ -149,20 +149,19 @@ return (
       {/* <div className="realization__nextImage">THERE WILL BE NEXT IMAGE</div> */}
       <div className="realization__nextImageWrapper" >
       <div className="realization__nextImage">  
-            <img className="slide" src={sliderData[0].image}/>
-            <img className="slide" src={sliderData[1].image}/>
-            <img className="slide" src={sliderData[2].image}/>
+            <img className="slide" src={sliderData[0].image} alt="1"/>
+            <img className="slide" src={sliderData[1].image} alt="2"/>
+            <img className="slide" src={sliderData[2].image} alt="3"/>
        </div>
       </div>
+
         <div className="realization__nextText">
           
           <div className="realization__nextTextWrapper">
-            {/* <h3  className="realization__nextTextTitle">NEXT PROJECT</h3> */}
             <h3  className="realization__nextTextBody">{sliderData[0].title}</h3>
           </div>
           
           <div className="realization__nextTextWrapper">
-            {/* <h3  className="realization__nextTextTitle">NEXT PROJECT</h3> */}
             <h3  className="realization__nextTextBody">{sliderData[1].title}</h3>
           </div>
           

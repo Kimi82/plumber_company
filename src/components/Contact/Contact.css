@@ -26,9 +26,10 @@
   position: relative;
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 420px) {
   .contact__header {
-    font-size: 1em;
+    font-size: 2em;
+    margin-top: 10px;
   }
 }
 
@@ -85,7 +86,7 @@
             flex-direction: column;
     margin-left: 0;
     margin-top: 40px;
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -183,7 +184,7 @@ form {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 90%;
+    width: 92%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;

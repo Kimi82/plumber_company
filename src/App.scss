@@ -3,11 +3,13 @@
 * {
   box-sizing: border-box;
   font-family: 'Oswald', sans-serif;  
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
+
 }
 
 .main__wrapper{

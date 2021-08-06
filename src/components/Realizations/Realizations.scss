@@ -8,14 +8,14 @@
     color:white;
     flex-direction: column;
     align-items: flex-end;
-    // &:after{
-    //     content: '';
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 100%;
-    //     background-color: #000000;
-    //     top:0;
-    // }
+    &:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        top:0;
+    }
     
     &__current{
         height: 80vh;
@@ -29,16 +29,16 @@
         }
        
         &Text{
-            width: 30%;
+            width: 50%;
             height: 100%;
             position: relative;
             top:20%;
-            left: 5%;
+            //left: 5%;
             &Wrapper{
                 position: absolute;
                 background-color: #000000;
-                width: 40%;
-                height: 50%;
+                width: 100%;
+                height: 70%;
             }
 
             &Title{
@@ -46,10 +46,10 @@
                 //background-color: #000000;;
                 font-family: 'Oswald', sans-serif !important;
                 @media all and (max-width:1000px){
-                    color:black;
-                    position: absolute;
-                    top:-20%;
-                    left:20%;
+                    color:white;
+                    position: relative;
+                    top:-12%;
+                    left:15%;
                     z-index: 9999;
                 }
             }
@@ -69,7 +69,7 @@
             position: relative;
             @media all and (max-width:1000px){
                 width:100vw;
-                
+                position: absolute;
             }
         }
         &Image{
@@ -86,7 +86,7 @@
 
     &__next{
         height: 25vh;
-        width: 60vw;
+        width: 50.6vw;
         //background-color: chartreuse;
         position: relative;
         display: flex;

@@ -1,7 +1,5 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './About.css'
-import { gsap } from "gsap";
-import { CustomEase } from "gsap/CustomEase";
 
 
 function About() {
@@ -22,7 +20,7 @@ const randomTitlePhoto = () => {
   return (
     <section className="about__wrapper" id="about"> 
       <div className="about__photo">
-        <img src={randomTitlePhoto()}/>
+        <img src={randomTitlePhoto()} alt="This is your HERO"/>
         </div>
       <div className="about__title"><h1>WE ARE PROFESSIONALS,<br/> WE CAN BE THEM<br/> FOR YOU TOO</h1></div>
 

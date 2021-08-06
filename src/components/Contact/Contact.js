@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import './Contact.css'
 import {gsap} from "gsap"
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import CSSRulePlugin from "gsap/CSSRulePlugin"
 
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -10,7 +9,6 @@ import * as yup from "yup"
 import emailjs from "emailjs-com"
 
 import Alert from '@material-ui/lab/Alert';
-import Button from '@material-ui/core/Button';
 
 function Contact() {
 
@@ -23,7 +21,7 @@ function Contact() {
     name: yup.string().required("!Please add Your Name!"),
     number: yup.string().matches(phoneRegExp, "!Please add corect phone number!")
   })
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   });
 
@@ -46,14 +44,11 @@ function Contact() {
     gsap.registerPlugin(ScrollTrigger)
     const contactForm = document.querySelector(".contact__form")
     const contactSubmit = document.querySelector(".contact__submit")
-    const navigationAdditional = CSSRulePlugin.getRule(".navigation a:after")
     const tl = gsap.timeline({scrollTrigger: {
       trigger: "#contact",
       start: 'top 20%',
   }});
     tl.to("#contact", {backgroundColor: "white", duration:2, ease:'easeInOut'})
-    //tl.to(".navigation a", {color: "black"})
-    //tl.to(navigationAdditional, {backgroundColor: "black"})
     tl.fromTo(".contact__header", {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'easeInOut'});
     tl.fromTo(contactForm.children, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'easeInOut'},'label');
     tl.fromTo(contactSubmit.children, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'easeInOut'},'label');  
@@ -91,15 +86,14 @@ function Contact() {
           </div>
           <div className="contact__formPart">
            <label className="contact__formPartLabel" htmlFor="selectTopic">And i want to talk about:</label>
-          {/*<input className="contact__formPartInput" type="text" name="topic"{...register("topic")}/> */}
           <div className="select">
             <select name="selectTopic" {...register("topic")}>
               <option defaultValue disabled>:)</option>
-              <option value="Usluga1">Usluga1</option>
-              <option value="Usluga2">Usluga2</option>
-              <option value="Usluga3">Usluga3</option>
-              <option value="Usluga4">Usluga4</option>
-              <option value="Usluga5">Usluga5</option>
+              <option value="Usluga1">Quotation</option>
+              <option value="Usluga2">Renovation</option>
+              <option value="Usluga3">Construction</option>
+              <option value="Usluga4">Demolition</option>
+              <option value="Usluga5">Others</option>
              </select>
           </div>
 

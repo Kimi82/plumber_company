@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './Services.css'
-import { gsap, Power1 } from "gsap";
+import { gsap } from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import CSSRulePlugin from "gsap/CSSRulePlugin"
 //import Card from './Card/Card.js'
@@ -17,7 +17,6 @@ function Services() {
      }})
 
      tl.to(".services__title h1", {color:"white", duration:2})
-     //tl.fromTo(".services__title h2",{opacity:0, scale:.9},{opacity:1, scale:1.5, duration:.8})
      tl.fromTo(".services__points p", {y: '+=100', scale:.9, opacity: 0}, {y: 0, scale:1, opacity: 1, stagger: .2, duration: .7})
      tl.fromTo(paragraphsUnderline, {width: 0}, {width:"80%", stagger: 1, duration: 1, ease: 'easeInOut'}) 
      
@@ -29,7 +28,6 @@ function Services() {
       <section className="services" id="services">
         <div className="services__title">
           <h1>Services</h1>
-          {/* <h2>Our company offers a wide range of services at the highest level</h2> */}
           </div>
           <div className="services__points">
             <span>
