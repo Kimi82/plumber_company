@@ -17,8 +17,19 @@ li{
     right:4%;
     display: flex;
     justify-content: space-between;
-    width: 27%;
+    width: 25%;
     color: white;
+    mix-blend-mode: difference;
+    transition: ease all .5s;
+    @media all and (max-width:1150px){
+      width: 30%;
+    }
+    @media all and (max-width:900px){
+      width: 50%;
+    }
+    @media all and (max-width:600px){
+      display: none;
+    }
 }
 
 a{

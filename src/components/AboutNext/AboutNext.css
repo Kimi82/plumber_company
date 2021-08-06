@@ -9,11 +9,28 @@
   position: relative;
 }
 
-p {
+.aboutNext__textWrapper {
+  text-align: justify;
+}
+
+.aboutNext__textWrapper p {
+  background-color: black;
   position: relative;
   font-size: 7vw;
-  padding: 20px 70px 20px;
+  padding: .5% 7%;
   opacity: 0;
+}
+
+@media all and (max-width: 1024px) {
+  .aboutNext__textWrapper p {
+    max-width: 100vw;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .aboutNext__textWrapper p {
+    font-size: 15vw;
+  }
 }
 
 .aboutNext__textWrapper--color1, .aboutNext__textWrapper--color2 {

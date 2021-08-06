@@ -19,38 +19,58 @@
     
     &__current{
         height: 80vh;
-        width: 70vw;
+        width: 80vw;
         position: relative;
         display: flex;
+        
+        @media all and (max-width:1000px){
+            height: 80vh;
+            width: 100vw;
+        }
        
         &Text{
-            width: 50%;
+            width: 30%;
             height: 100%;
-            //display: flex;
-            //flex-direction: column;
-            //justify-content: center;
             position: relative;
             top:20%;
+            left: 5%;
             &Wrapper{
                 position: absolute;
                 background-color: #000000;
+                width: 40%;
+                height: 50%;
             }
 
             &Title{
                 font-size: 3em;
                 //background-color: #000000;;
                 font-family: 'Oswald', sans-serif !important;
+                @media all and (max-width:1000px){
+                    color:black;
+                    position: absolute;
+                    top:-20%;
+                    left:20%;
+                    z-index: 9999;
+                }
             }
             &Body{
-                font-size: 1em;
-                //background-color: #000000;
+                margin-top: 2%;
+                font-size: 1.1em;
+                width:70%;
+                font-weight: 300;
+                @media all and (max-width:1000px){
+                    display: none;
+                }
             }    
         }
         &ImageWrapper{
             width: 60%;
-            height: 100%;
-            //background-color: yellow;    
+            height: 100%;  
             position: relative;
+            @media all and (max-width:1000px){
+                width:100vw;
+                
+            }
         }
         &Image{
             position: absolute;
@@ -72,6 +92,9 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        @media all and (max-width:1000px){
+         width:100%;
+        }
         &ImageWrapper{
             height: 20vh;
             width: 20vh;
@@ -91,7 +114,7 @@
         }
         &Text{
             position: relative;
-            width: 12vh;
+            width: 20vh;
             height: 20vh;
             display: flex;
             align-items: center;
@@ -107,10 +130,13 @@
                 letter-spacing: 1.5px;
                 font-family: 'Oswald Regular 400', sans-serif;
                 background-color: #000000;
+                text-align: center;
             }
             &Body{
                 width: 100%;
-                font-size: 1.2em;
+                //font-size: 1.2em;
+                margin-top: 10px;
+                font-size: medium;
                 background-color: #000000;
                 text-align: center;
             }

@@ -21,8 +21,29 @@ li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 27%;
+  width: 25%;
   color: white;
+  mix-blend-mode: difference;
+  -webkit-transition: ease all .5s;
+  transition: ease all .5s;
+}
+
+@media all and (max-width: 1150px) {
+  .navigation {
+    width: 30%;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .navigation {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    display: none;
+  }
 }
 
 a {

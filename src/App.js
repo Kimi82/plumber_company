@@ -18,12 +18,12 @@ function App() {
 
     
     <div className="main__wrapper">
-            {/* <About/>
+            {/* <About/>   
             <AboutNext/>
-            <Navigation/>  */}
-            <Realizations/> 
-            {/* <Services/>
-            <Contact/> */}
+            <Navigation/>*/}
+            <Realizations/>
+            {/*<Services/> 
+            <Contact/>  */}
     </div> 
      
   );

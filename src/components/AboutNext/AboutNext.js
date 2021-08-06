@@ -32,7 +32,7 @@ tl.fromTo(paragraphs, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: .5, 
     <div className="aboutNext__textWrapper"> 
       <p>We are a group of people that</p>
       <p><span className="aboutNext__textWrapper--color1">builds houses</span>with passion </p>
-      <p>We will also build yours</p>
+      <p>We will also build your</p>
       <p><span className="aboutNext__textWrapper--color2">dream house!</span></p>
       </div>
     </section>

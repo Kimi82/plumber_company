@@ -26,6 +26,12 @@
   position: relative;
 }
 
+@media all and (max-width: 400px) {
+  .contact__header {
+    font-size: 1em;
+  }
+}
+
 .contact__form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,23 +46,58 @@
 }
 
 .contact__formPart {
-  font-size: 2vw;
+  font-size: 1.7em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px;
+  padding: 30px;
+  position: relative;
 }
 
-.contact__formPartInput {
+@media all and (max-width: 1270px) {
+  .contact__formPart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+  }
+}
+
+.contact__formPartInput--valid, .contact__formPartInput--noValid {
+  color: black;
   width: 40%;
   margin-left: 50px;
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 1px solid black;
+}
+
+@media all and (max-width: 1270px) {
+  .contact__formPartInput--valid, .contact__formPartInput--noValid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 0;
+    margin-top: 40px;
+    width: 90%;
+  }
+}
+
+.contact__formPartInput--noValid {
+  border-bottom: 1px solid red;
+}
+
+.contact__formPartErrorMessage {
+  font-size: medium;
+  position: absolute;
+  left: 60%;
+  top: 85%;
 }
 
 .contact__submit {
@@ -82,16 +123,38 @@
 }
 
 .contact__submitButton {
-  background-color: #2de636;
-  border: none;
-  color: black;
-  padding: 30px;
-  text-align: center;
+  background-color: white;
+  border: 1px solid #2de636;
+  width: 70px;
+  height: 70px;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color .7s;
+  transition: background-color .7s;
+}
+
+.contact__submitButtonArrow {
+  border: solid black;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 3px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.contact__submitButton:hover {
+  background-color: #2de636;
 }
 
 .contact__submitTeader {
@@ -106,5 +169,83 @@ form {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media all and (max-width: 1270px) {
+  form {
+    width: 80%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 20px;
+  }
+}
+
+select {
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0 .5em;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  font-size: .6em;
+}
+
+@media all and (max-width: 1270px) {
+  select {
+    margin-top: 40px;
+    width: 90%;
+  }
+}
+
+.select {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  overflow: hidden;
+}
+
+@media all and (max-width: 1270px) {
+  .select {
+    width: 90%;
+  }
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  font-size: .7em;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  right: 0;
+  cursor: pointer;
+  -webkit-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
+@media all and (max-width: 1270px) {
+  .select::after {
+    margin: 32px 0px 9px 0px;
+  }
+}
+
+input {
+  font-size: .6em;
 }
 /*# sourceMappingURL=Contact.css.map */
