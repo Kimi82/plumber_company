@@ -5,7 +5,7 @@ I hosted it, you can see it link below
 https://suspicious-easley-8a49dc.netlify.app/
 
 ## Technology i used
-React.JS, GSAP, SCSS and a little bit of material-ui
+React.JS, GSAP, SCSS, emailjs, YUP and a little bit of material-ui
 
 ## TODO
 [] Loading page <br/>
